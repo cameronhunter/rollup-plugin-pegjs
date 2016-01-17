@@ -7,9 +7,11 @@ test(t => (
     entry: "grammar.pegjs",
     plugins: [pegjs()]
   }).then(bundle => {
-    const parser = eval(bundle.generate().code);
-    const output = parser.parse("PASS?");
+    const { parse } = eval(bundle.generate().code);
+    const pass = parse("PASS?");
+    const fail = parse("FAIL!");
 
-    t.same(output, { pass: true });
+    t.same(pass, { pass: true });
+    t.same(fail, { pass: false });
   })
 ));
