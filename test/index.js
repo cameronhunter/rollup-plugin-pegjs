@@ -5,7 +5,9 @@ import pegjs from '..';
 test(t => (
   rollup({
     entry: "grammar.pegjs",
-    plugins: [pegjs()]
+    plugins: [
+      pegjs()
+    ]
   }).then(bundle => {
     const { parse } = eval(bundle.generate().code);
     const pass = parse("PASS?");
