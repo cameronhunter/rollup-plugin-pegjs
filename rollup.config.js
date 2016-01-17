@@ -2,9 +2,9 @@ import babel from "rollup-plugin-babel";
 
 export default {
   entry: "src/index.js",
-  plugins: [
-    babel({ presets: ["es2015-rollup"] })
-  ],
+  dest: "dist/index.js",
   format: "cjs",
-  dest: "dist/index.js"
+  plugins: [
+    babel()
+  ]
 }
