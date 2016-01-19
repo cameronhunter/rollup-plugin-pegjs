@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-pegjs",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Import PEG.js grammars as parsers directly in your code",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",

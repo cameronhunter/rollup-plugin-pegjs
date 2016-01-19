@@ -2,8 +2,10 @@ import { buildParser } from "pegjs";
 import { createFilter } from "rollup-pluginutils";
 
 export default (options = {}) => ({
-  transform(code, id) {
-    const filter = createFilter(options.include || ["*.pegjs", "**/*.pegjs"], options.exclude);
-    return filter(id) ? { code: `module.exports = ${buildParser(code, { output: "source" })};`, map: { mappings: "" } } : null;
+  transform(grammar, id) {
+    const { target = "es6", include = ["*.pegjs", "**/*.pegjs"], exclude } = options;
+    const filter = createFilter(include, exclude);
+    const exporter = target == "es6" ? "export default" : "module.exports =";
+    return filter(id) ? { code: `${exporter} ${buildParser(grammar, { output: "source" })};`, map: { mappings: "" } } : null;
   }
 })

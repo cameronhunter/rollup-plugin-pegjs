@@ -6,7 +6,7 @@ test(t => (
   rollup({
     entry: "grammar.pegjs",
     plugins: [
-      pegjs()
+      pegjs({ target: "cjs" })
     ]
   }).then(bundle => {
     const { parse } = eval(bundle.generate().code);
