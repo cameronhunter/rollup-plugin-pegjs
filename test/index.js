@@ -4,16 +4,16 @@ import pegjs from '..';
 
 test(t => (
   rollup({
-    entry: "grammar.pegjs",
+    entry: 'grammar.pegjs',
     plugins: [
-      pegjs({ target: "cjs" })
+      pegjs({ target: 'cjs' })
     ]
   }).then(bundle => {
     const { parse } = eval(bundle.generate().code);
-    const pass = parse("PASS?");
-    const fail = parse("FAIL!");
+    const pass = parse('PASS?');
+    const fail = parse('FAIL!');
 
-    t.same(pass, { pass: true });
-    t.same(fail, { pass: false });
+    t.deepEqual(pass, { pass: true });
+    t.deepEqual(fail, { pass: false });
   })
 ));
