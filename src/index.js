@@ -1,4 +1,4 @@
-import { buildParser } from 'pegjs';
+import { generate } from 'pegjs';
 import { createFilter } from 'rollup-pluginutils';
 
 export default (options = {}) => ({
@@ -6,6 +6,6 @@ export default (options = {}) => ({
     const { target = 'es6', include = ['*.pegjs', '**/*.pegjs'], exclude, ...rest } = options;
     const filter = createFilter(include, exclude);
     const exporter = target == 'es6' ? 'export default' : 'module.exports =';
-    return filter(id) ? { code: `${exporter} ${buildParser(grammar, { output: 'source', ...rest })};`, map: { mappings: '' } } : null;
+    return filter(id) ? { code: `${exporter} ${generate(grammar, { output: 'source', ...rest })};`, map: { mappings: '' } } : null;
   }
 })
