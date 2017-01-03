@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "pegjs": "^0.10.0",
-    "rollup-pluginutils": "^1.5.2"
+    "rollup-pluginutils": "^2.0.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",
