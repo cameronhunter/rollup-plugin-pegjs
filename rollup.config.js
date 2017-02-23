@@ -5,6 +5,6 @@ export default {
   dest: 'build/index.js',
   format: 'cjs',
   plugins: [
-    babel({ babelrc: false, presets: ['es2015-rollup', 'stage-1'] })
+    babel({ babelrc: false, presets: ['es2015-rollup'] })
   ]
 }

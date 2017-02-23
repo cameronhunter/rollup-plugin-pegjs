@@ -2,6 +2,8 @@
   "name": "rollup-plugin-pegjs",
   "version": "2.1.1",
   "description": "Import PEG.js grammars as parsers directly in your code",
+  "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
+  "license": "MIT",
   "main": "build/index.js",
   "jsnext:main": "src/index.js",
   "files": [
@@ -14,21 +16,18 @@
     "test": "ava",
     "prepublish": "npm test"
   },
+  "dependencies": {
+    "pegjs": "^0.10.0",
+    "rollup-pluginutils": "^2.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.6.1"
+  },
   "keywords": [
     "pegjs",
     "rollup-plugin"
-  ],
-  "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
-  "license": "MIT",
-  "dependencies": {
-    "pegjs": "^0.10.0",
-    "rollup-pluginutils": "^1.5.2"
-  },
-  "devDependencies": {
-    "ava": "^0.16.0",
-    "babel-preset-es2015-rollup": "^1.2.0",
-    "babel-preset-stage-1": "^6.16.0",
-    "rollup": "^0.36.3",
-    "rollup-plugin-babel": "^2.6.1"
-  }
+  ]
 }
