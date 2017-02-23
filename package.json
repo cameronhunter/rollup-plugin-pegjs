@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-pegjs",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Import PEG.js grammars as parsers directly in your code",
   "author": "Cameron Hunter <hello@cameronhunter.co.uk>",
   "license": "MIT",
