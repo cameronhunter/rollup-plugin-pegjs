@@ -14,7 +14,8 @@
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "ava",
-    "prepublish": "npm test"
+    "preversion": "npm test",
+    "postversion": "git push --tags && git push"
   },
   "dependencies": {
     "pegjs": "^0.10.0",
